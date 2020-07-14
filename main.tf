@@ -32,3 +32,16 @@ resource "google_container_cluster" "primary" {
     ]
   }
 }
+
+resource "google_compute_global_address" "test_address" {
+  name = "${var.ip_address_name}"
+}
+
+resource "google_dns_record_set" "frontend" {
+  name = "${var.dns_entry}"
+  type = "A"
+  ttl  = 300
+
+  managed_zone = "${var.zone_name}"
+  rrdatas = [google_compute_global_address.test_address.address]
+}
