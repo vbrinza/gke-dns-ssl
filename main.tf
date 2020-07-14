@@ -1,7 +1,6 @@
 provider "google" {
   project = "${var.project}"
   region = "${var.region}"
-  location = "${var.location}"
   // Provider settings to be provided via ENV variables
 }
 
