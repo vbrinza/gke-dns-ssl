@@ -7,4 +7,9 @@ variable "cluster_name" {
 variable "username" {}
 variable "password" {}
 variable "project" {}
+variable "dns_entry" {}
+variable "zone_name" {}
+variable "ip_address_name" {}
+variable "location" {}
+
 data "google_compute_zones" "available" {}
